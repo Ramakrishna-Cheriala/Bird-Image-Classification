@@ -1,0 +1,20 @@
+main_dir: artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  kaggle_api_key: kaggle datasets download -d gpiosenka/100-bird-species
+  local_files_dir: artifacts/data_ingestion/data/
+  unzip_dir: artifacts/data_ingestion
+
+model_preparation:
+  root_dir: artifacts/model_preparation
+  model_saved_dir: artifacts/model_preparation/model.h5
+
+
+training_model:
+  root_dir: artifacts/training_model
+  saved_model_dir: artifacts/model_preparation/model.h5
+  trained_model_dir: artifacts/model_training/model.h5
+  train_data: artifacts/data_ingestion/train
+  test_data: artifacts/data_ingestion/test
+  validation_data: artifacts/data_ingestion/valid
