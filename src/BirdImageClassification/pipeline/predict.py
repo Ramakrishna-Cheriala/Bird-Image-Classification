@@ -9,7 +9,7 @@ class PredictionPipeline:
         self.filename = filename
 
     def predict(self):
-        dir_train = os.path.join("artifacts", "data_ingestion", "train/")
+        dir_train = os.path.join("artifacts", "data_ingestion", "data", "train/")
         classes = os.listdir(dir_train)
         model = load_model(os.path.join("artifacts", "training_model", "model.h5"))
         image_path = self.filename
@@ -21,5 +21,6 @@ class PredictionPipeline:
         prediction = model.predict(img_array)
         predicted_class = np.argmax(prediction)
         predicted_classname = classes[predicted_class]
+        max_score = np.max(prediction)
 
-        return [{"image": predicted_classname}]
+        return [{"image": predicted_classname, "Prediction_score": str(max_score)}]

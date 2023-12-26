@@ -9,6 +9,7 @@ from src.BirdImageClassification.utils.common import (
     create_directory,
     save_json,
 )
+from pathlib import Path
 
 
 class TrainingModel:

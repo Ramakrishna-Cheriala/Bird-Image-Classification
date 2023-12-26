@@ -36,9 +36,10 @@ class DataIngestion:
     def extract_zip_file(self):
         unzip_path = self.config.unzip_dir
         os.makedirs(unzip_path, exist_ok=True)
-        filepath = (
-            r"C:\Users\ramak\OneDrive\Desktop\P2\Birds_Classification\Data\data.zip"
-        )
+        # filepath = (
+        #     r"C:\Users\ramak\OneDrive\Desktop\P2\Birds_Classification\Data\data.zip"
+        # )
+        filepath = os.path.join("Data", "data.zip")
         logger.info("Extracting zip files............")
         # with zipfile.ZipFile(self.config.local_files_dir, 'r') as zip_ref:
         #     zip_ref.extractall(unzip_path)

@@ -32,7 +32,7 @@ class ModelPreparation:
     def __init__(self, config: ModelPreparationConfig):
         self.config = config
         print(self.config.input_shape)
-        self.base_model = DenseNet201(
+        self.base_model = InceptionV3(
             weights=self.config.weights,
             include_top=self.config.include_top,
             input_shape=(self.config.input_shape, self.config.input_shape, 3),
